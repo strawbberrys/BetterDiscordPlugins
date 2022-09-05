@@ -4516,7 +4516,7 @@ module.exports = (_ => {
 				BDFDB2.DiscordClasses = Object.assign({}, DiscordClasses);
 				Internal.getDiscordClass = function (item, selector) {
 					let className, fallbackClassName;
-					className = fallbackClassName = Internal.DiscordClassModules.BDFDB2.BDFDB2undefined + "-" + Internal.generateClassId();
+					className = fallbackClassName = Internal.DiscordClassModules.BDFDB.BDFDB2undefined + "-" + Internal.generateClassId(); // too lazy to fix, it couldnt find the BDFDB2 key in DiscordClassModules
 					if (DiscordClasses[item] === undefined) {
 						BDFDB2.LogUtils.warn([item, "not found in DiscordClasses"]);
 						return className;
