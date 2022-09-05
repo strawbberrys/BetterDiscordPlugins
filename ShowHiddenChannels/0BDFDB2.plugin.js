@@ -9,7 +9,7 @@
  * @patreon https://www.patreon.com/MircoWittrien
  * @website https://mwittrien.github.io/
  * @source https://github.com/mwittrien/BetterDiscordAddons/tree/master/Library/
- * @updateUrl https://raw.githubusercontent.com/strawbberrys/BetterDiscordPlugins/main/ShowHiddenChannels/0BDFDB.plugin.js
+ * @updateUrl https://raw.githubusercontent.com/strawbberrys/BetterDiscordPlugins/main/ShowHiddenChannels/0BDFDB2.plugin.js
  */
 
 module.exports = (_ => {
