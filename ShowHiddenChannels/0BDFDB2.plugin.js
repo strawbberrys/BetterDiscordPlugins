@@ -828,8 +828,8 @@ module.exports = (_ => {
 						let newName = (body.match(/"name"\s*:\s*"([^"]+)"/) || [])[1] || pluginName;
 						let newVersion = (body.match(/@version ([0-9]+\.[0-9]+\.[0-9]+)|['"]([0-9]+\.[0-9]+\.[0-9]+)['"]/i) || []).filter(n => n)[1];
 						let oldVersion = PluginStores.updateData.plugins[url].version;
-						let fileName = pluginName == "BDFDB" ? "0BDFDB" : pluginName;
-						let newFileName = newName == "BDFDB" ? "0BDFDB" : newName;
+						let fileName = pluginName == "BDFDB" ? "0BDFDB2" : pluginName;
+						let newFileName = newName == "BDFDB" ? "0BDFDB2" : newName;
 						Internal.LibraryRequires.fs.writeFile(Internal.LibraryRequires.path.join(BDFDB.BDUtils.getPluginsFolder(), newFileName + ".plugin.js"), body, _ => {
 							if (PluginStores.updateData.plugins[url]) PluginStores.updateData.plugins[url].version = newVersion;
 							if (fileName != newFileName) {
@@ -1012,7 +1012,7 @@ module.exports = (_ => {
 			BDFDB.DataUtils.save = function (data, plugin, key, id) {
 				plugin = plugin == BDFDB && Internal || plugin;
 				let pluginName = typeof plugin === "string" ? plugin : plugin.name;
-				let fileName = pluginName == "BDFDB" ? "0BDFDB" : pluginName;
+				let fileName = pluginName == "BDFDB" ? "0BDFDB2" : pluginName;
 				let configPath = path.join(BDFDB.BDUtils.getPluginsFolder(), fileName + ".config.json");
 				
 				let config = Cache.data[pluginName] !== undefined ? Cache.data[pluginName] : (Internal.readConfig(plugin, configPath) || {});
@@ -1042,7 +1042,7 @@ module.exports = (_ => {
 			BDFDB.DataUtils.load = function (plugin, key, id) {
 				plugin = plugin == BDFDB && Internal || plugin;
 				let pluginName = typeof plugin === "string" ? plugin : plugin.name;
-				let fileName = pluginName == "BDFDB" ? "0BDFDB" : pluginName;
+				let fileName = pluginName == "BDFDB" ? "0BDFDB2" : pluginName;
 				let configPath = path.join(BDFDB.BDUtils.getPluginsFolder(), fileName + ".config.json");
 				
 				let config = Cache.data[pluginName] !== undefined ? Cache.data[pluginName] : (Internal.readConfig(plugin, configPath) || {});
@@ -1059,7 +1059,7 @@ module.exports = (_ => {
 			BDFDB.DataUtils.remove = function (plugin, key, id) {
 				plugin = plugin == BDFDB && Internal || plugin;
 				let pluginName = typeof plugin === "string" ? plugin : plugin.name;
-				let fileName = pluginName == "BDFDB" ? "0BDFDB" : pluginName;
+				let fileName = pluginName == "BDFDB" ? "0BDFDB2" : pluginName;
 				let configPath = path.join(BDFDB.BDUtils.getPluginsFolder(), fileName + ".config.json");
 				
 				let config = Cache.data[pluginName] !== undefined ? Cache.data[pluginName] : (Internal.readConfig(plugin, configPath) || {});
@@ -1106,8 +1106,8 @@ module.exports = (_ => {
 				else return newC[key] === undefined || newC[key][id] === undefined ? null : newC[key][id];
 			};
 			
-			const cssFileName = "0BDFDB.raw.css";
-			const dataFileName = "0BDFDB.data.json";
+			const cssFileName = "0BDFDB2.raw.css";
+			const dataFileName = "0BDFDB2.data.json";
 			const cssFilePath = path.join(BDFDB.BDUtils.getPluginsFolder(), cssFileName);
 			const dataFilePath = path.join(BDFDB.BDUtils.getPluginsFolder(), dataFileName);
 			let InternalData, libHashes = {}, oldLibHashes = BDFDB.DataUtils.load(BDFDB, "hashes"), libraryCSS;
